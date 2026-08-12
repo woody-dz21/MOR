@@ -2,14 +2,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import gdown
-clc()
+
 
 mesh = fe.unitsquaremesh(40, 40)
 Vh = fe.space(mesh, 'CG', 1, vector_valued = True)
-clc()
+
 
 gdown.download(id = "1jMzgW3fe0A1BRiX1O4jH0T7GGUqnqVar", output = "sidewalk.npz")
-clc()
+
 
 data = np.load("sidewalk.npz")
 mu, u = data['mu'], data['u']
