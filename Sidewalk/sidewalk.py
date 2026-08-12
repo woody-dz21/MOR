@@ -1,4 +1,11 @@
-
+# Auto-install and import dlroms
+try:
+    from dlroms import *
+except ImportError:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-deps", "git+https://github.com/NicolaRFranco/dlroms.git"])
+    from dlroms import *
 import numpy as np
 import matplotlib.pyplot as plt
 import gdown
